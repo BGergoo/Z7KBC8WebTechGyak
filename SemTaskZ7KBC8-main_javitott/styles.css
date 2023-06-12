@@ -1,0 +1,172 @@
+/* Pár változó, a színeket így könnyű cserélni */
+:root {
+    --back-color: #333;
+    --main-color: #555;
+    --text-color: #eee;
+}
+
+/* Eltüntetem az összes margót a fő elemekről, könnyebb szerkeszteni */
+body, html {
+    margin: 0;
+    padding: 0;
+
+    min-height: 100%;
+
+    color: var(--text-color);
+    background-color: var(--back-color);
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Azt olvastam hogy ezt a méretezést ajánlják mindenhol */
+* {
+    box-sizing: border-box;
+}
+
+/* Ezzel oldom meg hogy a lábléc garantáltan alul legyen */
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    min-height: calc(100vh - 2px);
+}
+
+header, footer {
+    display: flex;
+    flex-direction: column;
+
+    height: 12.5rem;
+    box-shadow: 0 0 0.5rem 0.25rem #00000022;
+    
+    margin: 0;
+    border-radius: 0.5rem;
+
+    background-color: var(--main-color);
+}
+
+.header-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+    background: linear-gradient(-45deg, #ffaa44, #bb4400);
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+main {
+    display: flex;
+}
+
+.flex-container {
+    display: flex;
+    flex: 1;
+
+    gap: 1rem;
+}
+
+p.title {
+    font-weight: bolder;
+    font-size: 2.5rem;
+    
+    background: linear-gradient(-90deg, #222, #111);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    filter: drop-shadow(0 0 0.1rem white);
+
+    user-select: none;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 0.5rem;
+
+    height: 100%;
+
+    border-right: 0.1rem solid #00000022;
+    border-radius: 0 0.5rem 0.5rem 0;
+
+    background-color: var(--main-color);
+    padding: 0.5rem;
+
+    overflow: hidden;
+}
+
+button.menu-button {
+    color: var(--text-color);
+    padding: 0.5rem 2rem;
+    border: none;
+    background-color: var(--main-color);
+    
+    border-bottom: 0.1rem solid #ffffff22;
+
+    transition: 0.1s ease-in-out filter;
+}
+
+button.menu-button:hover {
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0 0.25rem #bb4400;
+
+    filter: brightness(1.1);
+}
+
+button.menu-button:active {
+    filter: brightness(0.8);
+}
+
+main {
+    flex: 1;
+    padding: 0;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: #ffffff88;
+    border-radius: 0.5rem 0.5rem 0 0;
+    translate: 0 0.1rem;
+
+    height: 2.5rem;
+}
+
+.page[active="true"] {
+    display: block;
+    
+    background-color: var(--main-color);
+    border-radius: 0.5rem 0 0 0.5rem;
+    padding: 1rem;
+
+    flex: 1;
+    height: 100%;
+}
+
+.page[active="false"] {
+    display: none;
+}
+
+.img-container {
+    padding: 0rem 1rem;
+    translate: 1rem 0;
+    width: fit-content;
+    height: max-content;
+    float: right;
+}
+
+.img-container>img {
+    width: 50vw;
+    max-width: 25rem;
+    box-shadow: 0 0 0.5rem 0.25rem #00000022;
+    border-radius: 0.5rem;
+}
+
+p {
+    margin : 0;
+    padding: 0;
+}
